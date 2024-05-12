@@ -89,7 +89,7 @@ class BicycleFragment : Fragment() {
             gv.adapter = adapter
 
         }
-
+        bicycleViewModel.listBicycle("station='骑行中'", "")
         return root
     }
 

@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.mine.bicycle.annotation.BicycleAnnotation
 import com.mine.bicycle.net.IBicycleServices
 import com.mine.bicycle.net.NetManager
+import com.mine.bicycle.net.respone.Bicycle
 import com.mine.bicycle.repository.model.bicycle.BicycleInStation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -15,6 +16,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BicycleViewModel @Inject constructor(): ViewModel() {
+
+    companion object {
+        val TAG = BicycleViewModel::class.simpleName
+    }
 
     @Inject lateinit var mNetManager: NetManager
 
@@ -30,10 +35,10 @@ class BicycleViewModel @Inject constructor(): ViewModel() {
     val bicycleInStationLiveData : LiveData<Pair<Int, ArrayList<String>>> = _bicycleInStation
 
     fun bicycleInStation() {
-        Log.i(BicycleViewModel::class.simpleName, "bicycleInStation: ${mNetManager.hashCode()}")
+        Log.i(TAG, "bicycleInStation: ${mNetManager.hashCode()}")
         viewModelScope.launch {
             try {
-                Log.i(BicycleViewModel::class.simpleName, "bicycleInStation: ${mNetManager.bicycleService == null}")
+                Log.i(TAG, "bicycleInStation: ${mNetManager.bicycleService == null}")
                 val bicycleStation = mNetManager.bicycleService?.bicycleStation(BicycleInStation().toField())
                 Log.i("TAG", "bicycleInStation: ${bicycleStation?.body()}")
                 val allData = ArrayList<String>()
@@ -54,6 +59,24 @@ class BicycleViewModel @Inject constructor(): ViewModel() {
                 e.printStackTrace()
                 _text.postValue("e ${e.message}")
             }
+        }
+    }
+
+    fun listBicycle(filter:String, sortStr:String) {
+        Log.i(TAG, "listBicycle: $filter, \n sort: $sortStr")
+        viewModelScope.launch {
+            val resp = mNetManager.bicycleService?.listBicycleByStation(mapOf("op" to "tablesettings", "filter" to filter, "sortstr" to sortStr))
+            val bicycles = arrayListOf<Bicycle>()
+            if (resp?.body() != null) {
+                (resp.body() as Array<Array<String>>).forEach {
+                    if (it.isNotEmpty()) {
+                        bicycles.add(
+                            Bicycle(imei = it[0], name = it[1], status = it[2].toInt(), station = it[3], power = it[4].toInt(),
+                            locked = it[5] == "true", online = it[6] == "true", unknownB1 = it[7] == "true", location = it[8], unknownB2 = it[9] == "true"))
+                    }
+                }
+            }
+            Log.d(TAG, "listBicycle: $bicycles")
         }
     }
 }

@@ -6,4 +6,21 @@
     <dimen name="nav_header_height">176dp</dimen>
 
     <dimen name="P5_x"></dimen>
+
+    <integer-array name="bicycle_status_value">
+        <item>@null</item>
+        <item>4</item>
+        <item>8</item>
+        <item>65</item>
+        <item>145</item>
+        <item>273</item>
+        <item>514</item>
+        <item>2050</item>
+        <item>4104</item>
+        <item>8194</item>
+        <item>1048576</item>
+        <item>1310720</item>
+        <item>1572864</item>
+        <item>16777216</item>
+    </integer-array>
 </resources>

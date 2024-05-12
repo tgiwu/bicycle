@@ -32,6 +32,7 @@ object ConfigManager {
     fun readConfig(){
         val file = File(Environment.getExternalStorageDirectory().absolutePath + "/bluetooth/config.xml")
         if (!file.exists()) {
+            Log.i(TAG, "readConfig: exists : ${file.exists()}")
             mConfig = Config(null)
             return
         }

@@ -17,8 +17,8 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+        // if read permission granted, read conf, or else request permission by mainActivity
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             ConfigManager.readConfig()
         }
     }

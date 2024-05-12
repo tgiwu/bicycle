@@ -1,5 +1,6 @@
 package com.mine.bicycle.net
 
+import com.mine.bicycle.net.respone.Bicycle
 import com.mine.bicycle.net.respone.BicycleInStation
 import retrofit2.Response
 import retrofit2.http.FieldMap
@@ -11,4 +12,10 @@ interface IBicycleServices {
     @FormUrlEncoded
     @POST("sys/setbicks.aspx")
     suspend fun bicycleStation(@FieldMap fieldMap: Map<String, String>) : Response<BicycleInStation>
+
+
+    @FormUrlEncoded
+    @POST("sys/setbicks.aspx")
+    suspend fun listBicycleByStation(@FieldMap fieldMap: Map<String, String>) :Response<Array<Array<String>>>
+
 }

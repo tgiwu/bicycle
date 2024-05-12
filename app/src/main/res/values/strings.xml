@@ -29,4 +29,91 @@
             A fool thinks he is clever， the wise man knows himself to be a fool.
         </item>
     </string-array>
+    <string name="bicycle_type">
+        <item>普通单车</item>
+        <item>捷安特</item>
+        <item>前后亲子车</item>
+        <item>双人亲子车</item>
+        <item>小观光车</item>
+        <item>四人车</item>
+        <item>大观光车</item>
+        <item>任何</item>
+    </string>
+    <string-array name="bicycle_state">
+        <item>任何</item>
+        <item>低电量</item>
+        <item>设备离线</item>
+        <item>调车</item>
+        <item>出界</item>
+        <item>超时</item>
+        <item>修理</item>
+        <item>充电中</item>
+        <item>无设备</item>
+        <item>休眠</item>
+        <item>设备错误</item>
+        <item>关锁失败</item>
+        <item>开锁失败</item>
+        <item>丢失</item>
+    </string-array>
+
+    <string-array name="bicycle_station">
+        <item>骑行中</item>
+        <item>公园门口</item>
+        <item>观景台</item>
+        <item>古槐公园</item>
+        <item>库房</item>
+        <item>南码头</item>
+        <item>P5</item>
+        <item>日出东方</item>
+        <item>雁栖半岛</item>
+        <item>任何</item>
+    </string-array>
+
+    <string-array name="bicycle_station_value">
+        <item>骑行中</item>
+        <item>gongyuanmenkou</item>
+        <item>guanjingtai</item>
+        <item>guhuaigongyuan</item>
+        <item>huogezhuang</item>
+        <item>nanmatou</item>
+        <item>P5station</item>
+        <item>richudongfang</item>
+        <item>yanqibandao</item>
+        <item>@null</item>
+    </string-array>
+
+    <string-array name="bicycle_battery">
+        <item>等于0</item>
+        <item>小于10</item>
+        <item>小40</item>
+        <item>小于80</item>
+    </string-array>
+
+    <string-array name="bicycle_battery_value">
+        <item>1</item>
+        <item>10</item>
+        <item>40</item>
+        <item>80</item>
+    </string-array>
+
+    <string-array name="bicycle_lock">
+        <item>任何</item>
+        <item>开锁</item>
+        <item>关锁</item>
+    </string-array>
+
+    <string-array name="bicycle_online">
+        <item>任何</item>
+        <item>在线</item>
+        <item>断线</item>
+    </string-array>
+
+    <string-array name="bicycle_lock_online_value">
+        <item>@null</item>
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+
+
+
 </resources>
