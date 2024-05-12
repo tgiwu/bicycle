@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="clock_locations">
+        <item>P5</item>
+        <item>古槐</item>
+        <item>观景台</item>
+        <item>半岛</item>
+        <item>码头</item>
+        <item>日出</item>
+        <item>南门</item>
+    </string-array>
+    <string-array name="clock_locations_xy">
+        <item>116.641045,40.381523</item>
+        <item>0,0</item>
+        <item>0,0</item>
+        <item>0,0</item>
+        <item>0,0</item>
+        <item>0,0</item>
+        <item>0,0</item>
+    </string-array>
+</resources>

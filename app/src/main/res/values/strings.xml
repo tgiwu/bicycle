@@ -12,4 +12,21 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="bicycle_in_station">bic in station</string>
+    <string-array name="poets">
+        <item>
+            All the Evils to be considered with the Good, that is in them, and with that worse attends them.
+        </item>
+        <item>
+            True talent is resolute aspiration. \n           ——Napoleon
+        </item>
+        <item>
+            True genius resides in the capacity for evaluation of uncertain, hazardous, and conflicting information
+        </item>
+        <item>
+            Success is going from failure to failure without losing enthusiasm.
+        </item>
+        <item>
+            A fool thinks he is clever， the wise man knows himself to be a fool.
+        </item>
+    </string-array>
 </resources>
