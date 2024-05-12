@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">bicycle</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_clock">clock</string>
+    <string name="title_bicycle">bicycle</string>
+    <string name="title_other">other</string>
+
+    <string name="clock_in">Clock In</string>
+    <string name="clock_out">Clock Out</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="bicycle_in_station">bic in station</string>
+</resources>
