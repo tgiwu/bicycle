@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.BicycleFragment">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv_list"/>
+
     <GridView
         android:id="@+id/gv_data"
         android:layout_width="match_parent"

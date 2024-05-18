@@ -27,12 +27,16 @@ class BicycleViewModel @Inject constructor(): ViewModel() {
         value = "This is dashboard Fragment"
     }
 
+    private val _bicycles = MutableLiveData<List<Bicycle>>()
+
     private val _bicycleInStation = MutableLiveData<Pair<Int, ArrayList<String>>>().apply {
         value = Pair(0, ArrayList())
     }
     val text: LiveData<String> = _text
 
     val bicycleInStationLiveData : LiveData<Pair<Int, ArrayList<String>>> = _bicycleInStation
+
+    val bicyclesLiveData : LiveData<List<Bicycle>> = _bicycles
 
     fun bicycleInStation() {
         Log.i(TAG, "bicycleInStation: ${mNetManager.hashCode()}")
@@ -76,7 +80,9 @@ class BicycleViewModel @Inject constructor(): ViewModel() {
                     }
                 }
             }
+
             Log.d(TAG, "listBicycle: $bicycles")
+            _bicycles.postValue(bicycles)
         }
     }
 }
