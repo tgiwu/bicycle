@@ -39,6 +39,7 @@ class BicycleFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setType(TYPE_TXT)
     }
 
     override fun onCreateView(
@@ -62,7 +63,6 @@ class BicycleFragment : Fragment() {
             textView.visibility = View.GONE
             gv.visibility = View.VISIBLE
             gv.numColumns = it.first
-            Log.i(TAG, "onCreateView: ${it.second}")
             val adapter = object: BaseAdapter() {
 
                 override fun getCount(): Int {
@@ -93,8 +93,6 @@ class BicycleFragment : Fragment() {
         bicycleViewModel.bicyclesLiveData.observe(viewLifecycleOwner) {
 
         }
-//        bicycleViewModel.listBicycle("station='骑行中'", "")
-        bicycleViewModel.listBicycle("station='gongyuanmenkou'", "")
         return root
     }
 

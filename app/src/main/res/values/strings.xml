@@ -39,6 +39,7 @@
         <item>大观光车</item>
         <item>任何</item>
     </string>
+    <string name="default_string">Let\'s show something</string>
     <string-array name="bicycle_state">
         <item>任何</item>
         <item>低电量</item>
