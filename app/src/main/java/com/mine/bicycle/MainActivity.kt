@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawer(GravityCompat.START)
 
         val dashFragment = navHostFragment.childFragmentManager.fragments[0] as BicycleFragment
-        dashFragment.refreshData(menuItem.itemId)
+        dashFragment.gridInStation(menuItem.itemId)
         return false
     }
 

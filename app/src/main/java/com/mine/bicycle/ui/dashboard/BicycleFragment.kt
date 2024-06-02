@@ -39,7 +39,6 @@ class BicycleFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setType(TYPE_TXT)
     }
 
     override fun onCreateView(
@@ -60,8 +59,7 @@ class BicycleFragment : Fragment() {
         }
 
         bicycleViewModel.bicycleInStationLiveData.observe(viewLifecycleOwner) {
-            textView.visibility = View.GONE
-            gv.visibility = View.VISIBLE
+            setType(TYPE_GRID)
             gv.numColumns = it.first
             val adapter = object: BaseAdapter() {
 
@@ -93,6 +91,8 @@ class BicycleFragment : Fragment() {
         bicycleViewModel.bicyclesLiveData.observe(viewLifecycleOwner) {
 
         }
+
+        setType(TYPE_TXT)
         return root
     }
 
@@ -101,9 +101,10 @@ class BicycleFragment : Fragment() {
         _binding = null
     }
 
-    fun refreshData(which:Int) {
+    fun gridInStation(which:Int) {
         when(which) {
             R.id.bicycle_in_station -> {
+
                 setType(TYPE_GRID)
                 bicycleViewModel.bicycleInStation()
             }
@@ -116,6 +117,7 @@ class BicycleFragment : Fragment() {
     }
 
     private fun setType(type:Int) {
+        Log.i(TAG, "setType: $type")
         mType = type
         when (type) {
             TYPE_TXT -> {

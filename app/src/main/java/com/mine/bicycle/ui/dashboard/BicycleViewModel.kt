@@ -30,14 +30,13 @@ class BicycleViewModel @Inject constructor(): ViewModel() {
     @Inject lateinit var mFilterManager: FilterManager
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "let's show something"
     }
 
     private val _bicycles = MutableLiveData<List<Bicycle>>()
 
-    private val _bicycleInStation = MutableLiveData<Pair<Int, ArrayList<String>>>().apply {
-        value = Pair(0, ArrayList())
-    }
+    private val _bicycleInStation = MutableLiveData<Pair<Int, ArrayList<String>>>()
+
     val text: LiveData<String> = _text
 
     val bicycleInStationLiveData : LiveData<Pair<Int, ArrayList<String>>> = _bicycleInStation
